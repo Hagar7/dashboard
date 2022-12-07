@@ -1,0 +1,78 @@
+@import '../index.scss';
+
+.categories {
+    min-height: 100vh;
+    background-color: $bgClr;
+    .head{
+        padding: 15px 20px;
+        background-color: $textClr;
+        display: flex;
+        font-weight: bold;
+        box-shadow: 16px 7px 12px gray;
+        
+        i{
+            font-size: 40px;
+            margin-right: 15px;
+            align-self: center;
+            color:   $secClr ;
+        }
+        .title{
+            h3{
+                font-size: 35px;
+                font-weight: 800;
+                color:   $secClr ;
+            }
+            h6{
+              font-weight: 600;
+            }
+
+        }
+    }
+    .content{
+        background-color: $bgClr;
+        padding-top:30px ;
+        min-height: 80vh;
+        .page{
+            box-shadow: 4px 7px 12px gray;
+            width: 85%;
+            margin: auto;
+            
+           
+            .pagehead{
+                background-color: #E8F1F3;
+                padding:10px 15px;
+                h6{
+                    font-size: 17px;
+                    font-weight: 500;
+                }
+            }
+        }
+        .pageInfo{
+            padding: 20px;
+            background-color: $textClr;
+            .butn{
+                background-color: $secClr !important;
+                border: none;
+            }
+            .myTable{
+                margin-top: 30px;
+                text-align: center;
+                border: 0.5px solid gray;
+                th{
+                    background-color: #D9EDF7;
+                    font-weight: 200;
+                }
+                th,tr,tbody,td{
+                    border: 0.5px solid gray; 
+                }
+                img{
+                    width: 60px;
+                    height: 60px;
+                    object-fit: cover;
+                }
+             
+            }
+
+        }
+    }
+}

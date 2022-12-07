@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300&family=Space+Mono:ital@1&family=Urbanist:wght@100&family=Xanh+Mono:ital@1&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+@mixin borderRadius($x){
+    border-radius: $x;
+    -webkit-border-radius: $x;
+    -moz-border-radius: $x;
+    -ms-border-radius: $x;
+    -o-border-radius: $x;
+  }
+
+  $mainClr:#374767;
+  $textClr:#fff;
+  $secClr :#009688;
+  $bgClr:#ececec;
+
+.mylinks{
+    display: flex;
+    // margin:10px 0 30px 0;
+    margin-bottom: 25px;
+    font-size: 18px;
+    gap: 15px;
+    padding:0 6px;
+    transition:0.5s all ease;
+    -webkit-transition:0.5s all ease;
+    -moz-transition:0.5s all ease;
+    -ms-transition:0.5s all ease;
+    -o-transition:0.5s all ease;
+}
+.brdr{
+    border-bottom: 1px solid gray;
+  }
+
+  .clear-fix{
+    clear: both;
+  }
+
+

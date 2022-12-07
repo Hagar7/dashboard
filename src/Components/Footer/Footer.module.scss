@@ -1,0 +1,15 @@
+@import '../../index.scss';
+
+.footer{
+    background-color: $bgClr;
+    color: black;
+    text-align: center;
+    min-height: 5vh;
+    p{
+        span{
+            color:  $secClr;
+            font-weight: bold;
+        }
+    }
+   
+}

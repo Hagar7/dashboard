@@ -1,0 +1,78 @@
+@import '../index.scss';
+
+
+.users {
+    min-height: 100vh;
+    background-color: $bgClr;
+    padding-bottom: 15px;
+    .head{
+        padding: 15px 20px;
+        background-color: $textClr;
+        display: flex;
+        font-weight: bold;
+        box-shadow: 16px 7px 12px gray;
+       
+        i{
+            font-size: 40px;
+            margin-right: 15px;
+            align-self: center;
+            color:   $secClr ;
+        }
+        .title{
+            h3{
+                font-size: 35px;
+                font-weight: 800;
+                color:   $secClr ;
+            }
+            h6{
+              font-weight: 600;
+            }
+
+        }
+    }
+    .content{
+        background-color: $bgClr;
+        padding-top:30px ;
+        min-height: 80vh;
+        .page{
+            box-shadow: 4px 7px 12px gray;
+            width: 85%;
+            margin: auto;
+            
+           
+            .pagehead{
+                background-color: #E8F1F3;
+                padding:10px 15px;
+                display: flex;
+                justify-content: space-between;
+                h6{
+                    font-size: 17px;
+                    font-weight: 500;
+                }
+                .msgBox{
+                    background-color:  $mainClr;
+                    color:   $textClr;
+                    @include borderRadius(5px);
+                    display: flex;
+                    height: 50px;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 15px;
+                    i{
+                        margin-left:15px;
+                    }
+        }
+            }
+        }
+        .pageInfo{
+            padding: 20px;
+            background-color: $textClr;
+            .butn{
+                background-color: $secClr !important;
+                border: none;
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../index.scss';
+
+
+
+.topnav{
+background-color: $mainClr;
+height: 50px;
+   .searchForm{
+    margin-top: -6px;
+    .inputSearch{
+        height: 30px !important;
+       
+    }
+    .myBtn{
+        height: 30px !important;
+        background-color: $mainClr!important;
+        border: none !important;
+    }
+     }
+     .topRight{
+        text-align: right;
+        margin-top: -12px; 
+        .menu {
+            background-color: transparent !important;
+            border: none;
+            i{
+                font-size: 20px;
+                span{
+                    font-size: 10px;
+                }
+            }
+        }
+        img{
+            width: 35px;
+            height: 35px;
+            @include borderRadius(50%)
+        }
+     }
+}
+
+
+
+@media screen and (max-width:767px){
+    .topnav{
+        height: 70px;
+        .drop{
+            display: none;
+        }
+        .dropImg{
+            margin-top: -25px;
+            margin-left: 15px;
+        }
+        .searchForm{
+            margin-top: 0;
+            .myBtn{
+                display: none;
+            }
+        }
+    }
+}
+
+// @media screen and (min-width:768px) and (max-width:991px){
+//     .social{
+//         flex-direction: column;
+//         justify-content: center;
+//     }
+// }
