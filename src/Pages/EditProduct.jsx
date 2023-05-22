@@ -30,7 +30,7 @@ export default function EditProduct() {
         e.preventDefault()
         try {
          let {data} = axios.put(
-              `http://localhost:3002/products/` +state.id,
+              `https://ecommerce-be-q3ia.onrender.com/products/` +state.id,
               product
             );
             setLoadMsg(true)
@@ -46,7 +46,7 @@ export default function EditProduct() {
     
     let getCategory =async()=>{
         const { data } = await axios.get(
-          "http://localhost:3002/categories",
+          "https://ecommerce-be-q3ia.onrender.com/categories",
           category
         );
         setCategory(data)

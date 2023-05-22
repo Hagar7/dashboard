@@ -27,7 +27,7 @@ export default function AddProducts() {
     try {
     
      let {data} = axios.post(
-          "http://localhost:3002/products",
+          "https://ecommerce-be-q3ia.onrender.com/products",
           product
         );
         setLoadMsg(true)
@@ -43,7 +43,7 @@ export default function AddProducts() {
   }
   let getCategory =async()=>{
     const { data } = await axios.get(
-      "http://localhost:3002/categories",
+      "https://ecommerce-be-q3ia.onrender.com/categories",
       category
     );
     setCategory(data)

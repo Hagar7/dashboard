@@ -10,7 +10,7 @@ export default function Users() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     const getUsers = async () => {
-      const { data } = await axios.get("http://localhost:3002/users");
+      const { data } = await axios.get("https://ecommerce-be-q3ia.onrender.com/users");
       setUsers(data);
     };
     getUsers();
@@ -18,7 +18,7 @@ export default function Users() {
 
   const deleteUser = async (id) => {
     try {
-      await axios.delete("http://localhost:3002/users/" + id);
+      await axios.delete("https://ecommerce-be-q3ia.onrender.com/users/" + id);
       setUsers(users.filter((user) => user.id !== id));
     } catch (error) {
       console.log(error);

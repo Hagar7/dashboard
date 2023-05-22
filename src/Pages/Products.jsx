@@ -23,7 +23,7 @@ export default function Products() {
 
   //delete
   const deleteProduct = async(id)=>{
-    const {data} = await axios.delete("http://localhost:3002/products/" + id)
+    const {data} = await axios.delete("https://ecommerce-be-q3ia.onrender.com/products" + id)
     setProducts(products.filter((product)=>product.id !== id))
   }
 
@@ -71,7 +71,7 @@ export default function Products() {
                       />
                     </td>
                     <td>{product.name}</td>
-                    <td>{product.price}</td>
+                    <td>{product.price} $</td>
                     <td>{product.category}</td>
                     <td>
                       <button

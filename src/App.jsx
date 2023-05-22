@@ -2,11 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MasterLayout from "./Components/MasterLayout/MasterLayout";
 import AddCategory from "./Pages/AddCategory";
 import AddProducts from "./Pages/AddProducts";
+import AddSlider from "./Pages/AddSlider";
 import AddUser from "./Pages/AddUser";
 import Categories from "./Pages/Categories";
 import Dashboard from "./Pages/Dashboard";
 import EditCategory from "./Pages/EditCategory";
 import EditProduct from "./Pages/EditProduct";
+import EditSlider from "./Pages/EditSlider";
 import EditUser from "./Pages/EditUser";
 // import Home from "./Pages/Home";
 
@@ -20,6 +22,8 @@ function App() {
       element: <MasterLayout />,
       children: [
         { index: true, element: <Dashboard /> },
+        { path: "addslider", element: <AddSlider /> },
+        { path: "editslider", element: <EditSlider /> },
         { path: "users", element: <Users /> },
         { path: "adduser", element: <AddUser /> },
         { path: "categories", element: <Categories /> },

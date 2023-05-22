@@ -15,6 +15,11 @@ export default function SideBar() {
             icon: <i className="fa fa-dashboard"></i>
         },
         {
+            path:'addslider',
+            name:'Add Slider',
+            icon: <i className="fa-solid fa-sliders"></i>
+        },
+        {
             path:'users',
             name:'Users',
             icon: <i className="fa-solid fa-users"></i>

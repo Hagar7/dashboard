@@ -43,7 +43,7 @@ let validForm = ()=>{
     else{
       try {
         const { data } = await axios.post(
-          "http://localhost:3002/users",
+          "https://ecommerce-be-q3ia.onrender.com/users",
           formData
         );
         setLoadMsg(true)

@@ -1,83 +1,63 @@
 import axios from 'axios';
-import Joi from 'joi';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import style from "../Styles/AddCategories.module.scss";
+import style from "../Styles/AddUser.module.scss";
 
-export default function AddCategory() {
-    const [loadmsg,setLoadMsg] = useState(false)
-    const [category,setCategory] = useState({
-     image: "",
-     name: "",
-    })
-    let navigate = useNavigate()
-//joi valid
-  let CatForm = ()=>{
-    let schema =  Joi.object({
-        image:Joi.required(),
-        name:Joi.string().required()
-      })
-      return schema.validate(category)
-  }
- 
-    //onchange
-    let changeHandler = (e)=>{
-        let categoryData = {...category}
-        categoryData[e.target.name] = e.target.value;
-        setCategory(categoryData)
+
+export default function AddSlider() {
+let navigate = useNavigate();
+const [loadmsg,setLoadMsg] = useState(false)
+const [slidersForm,GetSlidersForm] = useState({
+    image:"",
+    name:"",
+    caption:"",
+})
+
+const submitHandeler = async(e)=>{
+    e.preventDefault();
+    try {
+       const {data} = await axios.post('https://ecommerce-be-q3ia.onrender.com/sliders',slidersForm)
+       setLoadMsg(true)
+       const timer = setTimeout(() => {
+         navigate("/");         
+       }, 2000);
+    } catch (error) {
+        console.log(error);
     }
-  //submit
-  let submitHandeler = async (e)=>{
-    e.preventDefault()
-    let validForm = CatForm()
-    if(validForm.error){
-        alert('try again');
-    }
-    else {
-        try {
-            const { data } = await axios.post(
-                "https://ecommerce-be-q3ia.onrender.com/categories",
-                category
-              );
-              setLoadMsg(true)
+}
 
-              const timer = setTimeout(()=>{
-                navigate('/Categories')
+const changeHandler = (e)=>{
+ let sliders = {...slidersForm}
+ sliders[e.target.name] = e.target.value;
+ GetSlidersForm(sliders);
+}
 
-              },2000);  
-             } catch (error) {
-           console.log(error); 
-        }
 
-    }
-
-   
-  }  
   return (
-    <div className={`${style.category}`}>
+    <div className={`${style.users}`}>
         <div className={`${style.head}`}>
-        <i className="fa-solid fa-shop"></i>
+        <i className="fa-solid fa-sliders"></i>
           <div className={`${style.title}`}>
-            <h3>Add Category</h3>
-            <h6>Category Register</h6>
+            <h3>Add Slider</h3>
+            <h6>Slider Register</h6>
           </div>
           
         </div>
         <div className={`${style.content}`}>
           <div className={`${style.page}`}>
             <div className={`${style.pagehead}`}>
-              <h6>Category Details</h6>
+              <h6>Slider Details</h6>
               {loadmsg===true ?
               <div className={`${style.msgBox}`}>
-            <h6>Category Created Successfuly</h6>
+            <h6>Slider Added Successfuly</h6>
             <i className="fa-solid fa-check-double"></i>
              </div>
              :""}
             </div>
             <div className={`${style.brdr}`}></div>
             <div className={`${style.pageInfo}`}>
-              <Link to="/categories" className={`${style.butn} btn btn-danger`}>
-              <i className="fa-solid fa-shop"></i> Categories
+              <Link to="/users" className={`${style.butn} btn btn-danger`}>
+              <i className="fa-solid fa-sliders"></i> sliders
               </Link>
 
               <form onSubmit={submitHandeler}>
@@ -89,15 +69,25 @@ export default function AddCategory() {
                     className="form-control "
                   />
                 </div>
+
                 <div className={`${style.inputData} my-3`}>
                   <input
                     type="text"
                     name="name"
-                    placeholder="Enter Your Name"
+                    placeholder="Enter Slide Name"
                     className="form-control "
                     onChange={changeHandler}
                   />
-                </div>  
+                </div>
+                <div className={`${style.inputData} my-3`}>
+                  <input
+                    type="text"
+                    name="caption"
+                    placeholder="Enter Slide Caption"
+                    className="form-control "
+                    onChange={changeHandler}
+                  />
+                </div>
                 <button
                   type="reset"
                   className={`${style.butn} myBtn btn btn-primary my-3 float-start`}

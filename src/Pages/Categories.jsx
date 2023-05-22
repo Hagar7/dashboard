@@ -11,16 +11,15 @@ export default function Categories() {
 
     useEffect(() => {
       const getCategories = async() =>{
-        const { data } = await axios.get("http://localhost:3002/categories");
+        const { data } = await axios.get("https://ecommerce-be-q3ia.onrender.com/categories");
         setCategories(data)
       }
       getCategories()
     }, [])
     
     const deleteUser = async (id)=>{
-
       try {
-       await axios.delete("http://localhost:3002/categories/" + id)
+       await axios.delete("https://ecommerce-be-q3ia.onrender.com/categories/" + id)
        setCategories(categories.filter((category)=>category.id !==id))
       } catch (error) {
         console.log();

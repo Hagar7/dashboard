@@ -27,7 +27,7 @@ export default function EditUser() {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        "http://localhost:3002/users/" +state.id,
+        "https://ecommerce-be-q3ia.onrender.com/users/" +state.id,
         formData
       );
       setLoadMsg(true)
